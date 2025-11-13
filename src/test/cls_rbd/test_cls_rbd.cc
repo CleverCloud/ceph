@@ -3136,7 +3136,7 @@ TEST_F(TestClsRbd, namespace_quota)
   string name = "quota_ns";
   ASSERT_EQ(0, namespace_add(&ioctx, name));
 
-  // get quota on fresh namespace — should return zeros
+  // get quota on fresh namespace, should return zeros
   cls::rbd::NamespaceInfo info;
   ASSERT_EQ(0, namespace_quota_get(&ioctx, name, &info));
   ASSERT_EQ(0U, info.max_bytes);
